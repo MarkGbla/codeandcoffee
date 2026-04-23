@@ -44,18 +44,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link className="hover:opacity-70 transition-opacity" href="/sessions">
-                  sessions
-                </Link>
-              </li>
-              <li>
-                <Link className="hover:opacity-70 transition-opacity" href="/community">
-                  community
-                </Link>
-              </li>
-              <li>
-                <Link className="hover:opacity-70 transition-opacity" href="/projects">
-                  projects
+                <Link className="hover:opacity-70 transition-opacity" href="/#faqs">
+                  faqs
                 </Link>
               </li>
             </ul>

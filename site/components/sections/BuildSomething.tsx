@@ -3,17 +3,17 @@
 type Photo = { src: string; name?: string };
 
 const leftCol: Photo[] = [
-  { src: "/frnds/code%26coffee001.png" },
-  { src: "/frnds/code%26coffee003.png" },
+  { src: "/frnds/codeandcoffee001.png" },
+  { src: "/frnds/codeandcoffee003.png" },
   { src: "/frnds/codeandcoffee004.png" },
-  { src: "/frnds/code%26coffee002.png" },
+  { src: "/frnds/codeandcoffee002.png" },
 ];
 
 const midCol: Photo[] = [
-  { src: "/frnds/code%26coffee002.png" },
+  { src: "/frnds/codeandcoffee002.png" },
   { src: "/frnds/codeandcoffee004.png" },
-  { src: "/frnds/code%26coffee001.png" },
-  { src: "/frnds/code%26coffee003.png" },
+  { src: "/frnds/codeandcoffee001.png" },
+  { src: "/frnds/codeandcoffee003.png" },
 ];
 
 export function BuildSomething() {
