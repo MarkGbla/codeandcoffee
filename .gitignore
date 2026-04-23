@@ -49,3 +49,9 @@ coverage/
 
 # Vercel
 .vercel/
+
+# Claude Code local config
+.claude/
+
+# stale duplicate tree (accidental local mirror)
+site/site/
