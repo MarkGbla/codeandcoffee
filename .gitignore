@@ -1,0 +1,51 @@
+# video-extract frame artifacts (local only, not for the repo)
+frames/
+frames2/
+**/frames/
+**/frames2/
+
+# raw recordings (huge, transcoded copies live in site/public/video)
+*.mov
+Screen Recording*
+recording.*
+
+# dependencies
+node_modules/
+.pnp/
+.pnp.js
+.pnpm-store/
+
+# Next.js build output
+.next/
+out/
+
+# production builds
+build/
+dist/
+
+# TypeScript incremental cache
+*.tsbuildinfo
+
+# env files
+.env
+.env.local
+.env.*.local
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# coverage
+coverage/
+
+# editors / OS
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Vercel
+.vercel/

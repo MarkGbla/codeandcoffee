@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-bg: #f2f3f3;
+  --brand-yellow: #ffea00;
+}
+
+html,
+body {
+  background: #ffffff;
+  color: #0a0a0a;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Framer's container max-width (1312px) with responsive gutters. */
+.wrap {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: 64px;
+  padding-right: 64px;
+}
+@media (max-width: 809.98px) {
+  .wrap { padding-left: 20px; padding-right: 20px; }
+}
+
+.text-balance { text-wrap: balance; }
+
+/* Hero bottom-fade for headline contrast */
+.hero-gradient {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 45%,
+    rgba(0, 0, 0, 0.55) 85%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+}
+
+/* Theater SVG (hero fallback) */
+.theater-bg {
+  background-image: url("/theater.svg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Marquee fallback keyframes — real marquee uses RAF in BuildSomething.tsx */
+@keyframes marquee-up {
+  0%   { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(0, -50%, 0); }
+}
+@keyframes marquee-down {
+  0%   { transform: translate3d(0, -50%, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+/* Hand-drawn-ish nav link underline (mimics the real site's offset orange underline) */
+.nav-link {
+  font-family: var(--font-scribble), "Fragment Mono", monospace;
+  color: #F2A73B;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 6px;
+  transition: color .15s ease;
+}
+.nav-link:hover { color: #FFB547; }
+.nav-link[data-active="true"] { text-decoration-thickness: 2.5px; }
