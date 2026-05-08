@@ -3,48 +3,48 @@
 type Photo = { src: string; name?: string };
 
 const leftCol: Photo[] = [
-  { src: "/frnds/shaurya.png" },
-  { src: "/frnds/manav.png" },
-  { src: "/frnds/arny.png" },
-  { src: "/frnds/prey.png" },
+  { src: "/frnds/codeandcoffee001.png" },
+  { src: "/frnds/codeandcoffee003.png" },
+  { src: "/frnds/codeandcoffee004.png" },
+  { src: "/frnds/codeandcoffee002.png" },
 ];
 
 const midCol: Photo[] = [
-  { src: "/frnds/prey.png" },
-  { src: "/frnds/arny.png" },
-  { src: "/frnds/shaurya.png" },
-  { src: "/frnds/manav.png" },
+  { src: "/frnds/codeandcoffee002.png" },
+  { src: "/frnds/codeandcoffee004.png" },
+  { src: "/frnds/codeandcoffee001.png" },
+  { src: "/frnds/codeandcoffee003.png" },
 ];
 
 const mobileCards: { top: Photo[]; bottom: Photo[] }[] = [
   {
     top: [
-      { src: "/frnds/shaurya.png" },
-      { src: "/frnds/manav.png" },
+      { src: "/frnds/codeandcoffee001.png" },
+      { src: "/frnds/codeandcoffee003.png" },
     ],
     bottom: [
-      { src: "/frnds/prey.png" },
-      { src: "/frnds/arny.png" },
+      { src: "/frnds/codeandcoffee002.png" },
+      { src: "/frnds/codeandcoffee004.png" },
     ],
   },
   {
     top: [
-      { src: "/frnds/arny.png" },
-      { src: "/frnds/prey.png" },
+      { src: "/frnds/codeandcoffee004.png" },
+      { src: "/frnds/codeandcoffee002.png" },
     ],
     bottom: [
-      { src: "/frnds/manav.png" },
-      { src: "/frnds/shaurya.png" },
+      { src: "/frnds/codeandcoffee003.png" },
+      { src: "/frnds/codeandcoffee001.png" },
     ],
   },
   {
     top: [
-      { src: "/frnds/prey.png" },
-      { src: "/frnds/shaurya.png" },
+      { src: "/frnds/codeandcoffee002.png" },
+      { src: "/frnds/codeandcoffee001.png" },
     ],
     bottom: [
-      { src: "/frnds/arny.png" },
-      { src: "/frnds/manav.png" },
+      { src: "/frnds/codeandcoffee004.png" },
+      { src: "/frnds/codeandcoffee003.png" },
     ],
   },
 ];
