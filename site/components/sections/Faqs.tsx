@@ -35,19 +35,19 @@ export function Faqs() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faqs" className="bg-white pt-28 pb-32">
+    <section id="faqs" className="bg-white pt-20 md:pt-28 pb-24 md:pb-32 font-inter">
       <div className="wrap">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease }}
-          className="font-display text-center font-semibold tracking-[-0.02em] text-[56px] md:text-[96px] leading-none lowercase"
+          className="font-inter text-center font-semibold tracking-[-0.02em] text-[clamp(48px,13vw,96px)] leading-none lowercase"
         >
           faqs
         </motion.h2>
 
-        <div className="mt-16 max-w-[1100px] mx-auto">
+        <div className="mt-10 md:mt-16 max-w-[1100px] mx-auto">
           {faqs.map((f, i) => {
             const isOpen = open === i;
             return (
@@ -63,18 +63,18 @@ export function Faqs() {
                   type="button"
                   onClick={() => setOpen(isOpen ? null : i)}
                   aria-expanded={isOpen}
-                  className="w-full cursor-pointer flex items-start gap-10 md:gap-16 py-8 md:py-10 text-left group"
+                  className="w-full cursor-pointer flex items-start gap-4 md:gap-16 py-6 md:py-10 text-left group"
                 >
-                  <span className="text-[20px] md:text-[24px] font-semibold tracking-tight min-w-[4ch] tabular-nums">
+                  <span className="text-[16px] md:text-[24px] font-semibold tracking-tight min-w-[3.5ch] md:min-w-[4ch] tabular-nums pt-[2px]">
                     / 0{i + 1}
                   </span>
-                  <span className="flex-1 text-[20px] md:text-[28px] font-semibold tracking-tight leading-[1.25] transition-colors group-hover:text-black">
+                  <span className="flex-1 text-[17px] md:text-[28px] font-semibold tracking-tight leading-[1.3] transition-colors group-hover:text-black">
                     {f.q}
                   </span>
                   <motion.span
                     animate={{ rotate: isOpen ? 45 : 0 }}
                     transition={{ duration: 0.25, ease }}
-                    className="text-[28px] leading-none pt-1 select-none inline-block"
+                    className="text-[24px] md:text-[28px] leading-none pt-1 select-none inline-block"
                   >
                     +
                   </motion.span>
@@ -89,7 +89,7 @@ export function Faqs() {
                       transition={{ duration: 0.4, ease }}
                       className="overflow-hidden"
                     >
-                      <div className="pl-[calc(4ch+2.5rem)] md:pl-[calc(4ch+4rem)] pr-[3rem] pb-10 -mt-2 text-[18px] md:text-[22px] text-neutral-800 leading-[1.45]">
+                      <div className="pl-[calc(3.5ch+1rem)] md:pl-[calc(4ch+4rem)] pr-6 md:pr-[3rem] pb-8 md:pb-10 -mt-1 text-[15px] md:text-[22px] text-neutral-800 leading-[1.5]">
                         {f.a}
                       </div>
                     </motion.div>

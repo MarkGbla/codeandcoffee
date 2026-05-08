@@ -30,16 +30,16 @@ const closing = ["keep showing up.", "keep learning.", "keep building."];
 
 export default function AboutPage() {
   return (
-    <main className="bg-white">
+    <main className="relative bg-white">
       <Nav variant="solid" />
-      <div className="pt-36 md:pt-44" />
+      <div className="pt-28 md:pt-44" />
 
-      <section className="wrap pb-24 md:pb-32">
+      <section className="wrap pb-20 md:pb-32">
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease, delay: 0.2 }}
-          className="font-display font-semibold tracking-[-0.03em] leading-[0.95] text-[56px] md:text-[112px] lowercase"
+          className="font-display font-semibold tracking-[-0.03em] leading-[0.95] text-[clamp(44px,12vw,112px)] lowercase"
         >
           about code &amp; coffee
         </motion.h1>
@@ -49,7 +49,7 @@ export default function AboutPage() {
           whileInView="show"
           viewport={{ once: true, margin: "0px 0px -10% 0px" }}
           variants={{ show: { transition: { staggerChildren: 0.08 } } }}
-          className="mt-16 md:mt-24 max-w-[70ch] space-y-6 text-[20px] md:text-[24px] leading-[1.55] tracking-tight"
+          className="mt-10 md:mt-24 max-w-[70ch] space-y-5 md:space-y-6 text-[18px] md:text-[24px] leading-[1.55] tracking-tight"
         >
           {story.map((p, i) => (
             <motion.p
@@ -84,8 +84,8 @@ export default function AboutPage() {
         <Marquee items={strip} speed={45} />
       </section>
 
-      <section className="relative h-[70vh] min-h-[520px] overflow-hidden bg-black">
-        <BackgroundVideo src="/video/cnc.mp4" className="z-0" />
+      <section className="relative h-[60vh] md:h-[70vh] min-h-[440px] md:min-h-[520px] overflow-hidden bg-black">
+        <BackgroundVideo src="/video/cnc.mp4" className="z-0" preload="metadata" />
         <div className="absolute inset-0 z-10 bg-black/45 pointer-events-none" />
         <div className="relative z-20 h-full flex items-center">
           <div className="wrap">
@@ -94,7 +94,7 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "0px 0px -15% 0px" }}
               transition={{ duration: 0.9, ease }}
-              className="font-display text-white font-semibold tracking-[-0.02em] leading-[1.02] text-[44px] md:text-[80px] max-w-[20ch]"
+              className="font-display text-white font-semibold tracking-[-0.02em] leading-[1.04] text-[clamp(34px,7vw,80px)] max-w-[20ch]"
             >
               creating a space where people can learn and build together.
             </motion.h2>
@@ -102,18 +102,18 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-[#E6F2F1] py-28">
-        <div className="wrap grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-14 items-start">
+      <section className="bg-[#E6F2F1] py-20 md:py-28">
+        <div className="wrap grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-10 md:gap-14 items-start">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "0px 0px -10% 0px" }}
             transition={{ duration: 0.7, ease }}
           >
-            <h2 className="font-display font-semibold tracking-[-0.02em] text-[56px] md:text-[88px] leading-none lowercase">
+            <h2 className="font-display font-semibold tracking-[-0.02em] text-[clamp(44px,11vw,88px)] leading-none lowercase">
               team
             </h2>
-            <p className="mt-6 text-[20px] md:text-[22px]">
+            <p className="mt-4 md:mt-6 text-[18px] md:text-[22px]">
               the people behind code &amp; coffee.
             </p>
           </motion.div>
@@ -147,7 +147,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-white py-28">
+      <section className="bg-white py-20 md:py-28">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -155,20 +155,20 @@ export default function AboutPage() {
           transition={{ duration: 0.7, ease }}
           className="wrap max-w-[820px] mx-auto text-center"
         >
-          <h2 className="font-display font-semibold tracking-[-0.02em] text-[36px] md:text-[50px] leading-[1.05] lowercase">
+          <h2 className="font-display font-semibold tracking-[-0.02em] text-[clamp(32px,7vw,50px)] leading-[1.05] lowercase">
             stay updated
           </h2>
-          <p className="mt-5 text-[18px] md:text-[20px] text-[#919191] leading-[1.45]">
+          <p className="mt-4 md:mt-5 text-[16px] md:text-[20px] text-[#919191] leading-[1.5]">
             get updates on upcoming sessions, events, and community activities.
           </p>
           <form
-            className="mt-10 flex flex-col md:flex-row gap-3 justify-center max-w-[540px] mx-auto"
+            className="mt-8 md:mt-10 flex flex-col md:flex-row gap-3 justify-center max-w-[540px] mx-auto"
             onSubmit={(e) => e.preventDefault()}
           >
             <input
               type="email"
               placeholder="enter your email"
-              className="flex-1 bg-[#F2F3F3] px-5 py-4 text-[16px] outline-none focus:ring-2 focus:ring-black/20"
+              className="flex-1 w-full bg-[#F2F3F3] px-5 py-4 text-[16px] outline-none focus:ring-2 focus:ring-black/20"
             />
             <motion.button
               whileHover={{ scale: 1.03, backgroundColor: "#FFEA00", color: "#000" }}

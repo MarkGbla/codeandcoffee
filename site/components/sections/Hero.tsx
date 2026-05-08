@@ -14,7 +14,7 @@ import { BackgroundVideo } from "../BackgroundVideo";
  */
 export function Hero() {
   return (
-    <section className="relative isolate w-full h-screen min-h-[640px] overflow-hidden bg-black">
+    <section className="relative isolate w-full h-[100svh] min-h-[560px] md:min-h-[640px] overflow-hidden bg-black">
       <BackgroundVideo src="/video/cnc.mp4" className="z-0" />
 
       <div
@@ -32,7 +32,7 @@ export function Hero() {
         }}
         style={{ translate: "-50% 0" }}
         className="
-          absolute z-20 left-1/2 bottom-[72px]
+          absolute z-20 left-1/2 bottom-12 md:bottom-[72px]
           w-[min(1312px,calc(100%-40px))] md:w-[min(1312px,calc(100%-80px))]
           flex flex-col items-start
         "
@@ -55,7 +55,7 @@ export function Hero() {
             wordBreak: "break-word",
           }}
           className="
-            text-white text-[34px] md:text-[75px]
+            text-white text-[clamp(34px,9vw,75px)]
             whitespace-pre-wrap text-left w-full
           "
         >

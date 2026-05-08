@@ -32,7 +32,7 @@ export function Marquee({ items, speed = 40 }: Props) {
         {loop.map((it, i) => (
           <figure
             key={i}
-            className="relative shrink-0 w-[26vw] min-w-[280px] aspect-[4/5] bg-neutral-900 overflow-hidden"
+            className="relative shrink-0 w-[60vw] sm:w-[40vw] md:w-[26vw] min-w-[220px] md:min-w-[280px] aspect-[4/5] bg-neutral-900 overflow-hidden"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img

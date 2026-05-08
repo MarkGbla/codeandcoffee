@@ -7,16 +7,16 @@ import { ease } from "@/lib/motion";
 
 export function Footer() {
   return (
-    <footer className="bg-black text-white pt-24 pb-8">
+    <footer className="bg-black text-white pt-16 md:pt-24 pb-8">
       <div className="wrap">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "0px 0px -10% 0px" }}
           transition={{ duration: 0.7, ease }}
-          className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-16"
+          className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-10 md:gap-16"
         >
-          <p className="text-[22px] md:text-[28px] leading-[1.3] tracking-tight">
+          <p className="text-[18px] md:text-[28px] leading-[1.4] tracking-tight break-words">
             for partnerships or collaborations:
             <br />
             <a
@@ -52,8 +52,8 @@ export function Footer() {
           </div>
         </motion.div>
 
-        <div className="h-px bg-white/25 mt-20" />
-        <div className="font-scribble text-[16px] pt-4 pb-2 opacity-80">
+        <div className="h-px bg-white/25 mt-14 md:mt-20" />
+        <div className="font-scribble text-[14px] md:text-[16px] pt-4 pb-2 opacity-80">
           © code &amp; coffee
         </div>
         <div className="h-px bg-white/25" />
@@ -63,9 +63,9 @@ export function Footer() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "0px 0px -15% 0px" }}
           transition={{ duration: 1, ease }}
-          className="flex items-center justify-center pt-20 pb-6"
+          className="flex items-center justify-center pt-12 md:pt-20 pb-4 md:pb-6"
         >
-          <Logo size="xl" href={null} tone="light" />
+          <Logo size="xl" href={null} tone="light" className="text-center" />
         </motion.div>
       </div>
     </footer>

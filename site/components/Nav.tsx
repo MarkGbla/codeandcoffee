@@ -28,10 +28,10 @@ export function Nav({ variant = "overlay" }: Props) {
         initial={{ opacity: 0, y: -16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease, delay: 0.2 }}
-        className="wrap flex items-center justify-between pt-7 pb-4"
+        className="wrap flex items-center justify-between gap-4 pt-5 pb-4 md:pt-7"
       >
-        <Logo size="sm" tone={tone} />
-        <nav className="flex items-center gap-5 md:gap-8">
+        <Logo size="md" tone={tone} />
+        <nav className="flex items-center flex-wrap justify-end gap-x-3 gap-y-1 sm:gap-4 md:gap-8">
           {items.map((it, i) => {
             const active = pathname === it.href;
             return (
@@ -44,7 +44,7 @@ export function Nav({ variant = "overlay" }: Props) {
                 <Link
                   href={it.href}
                   data-active={active}
-                  className="nav-link text-[18px] md:text-[20px] leading-none"
+                  className="nav-link text-[15px] sm:text-[17px] md:text-[20px] leading-none"
                   style={tone === "dark" ? { color: "#0A0A0A" } : undefined}
                 >
                   {it.label}

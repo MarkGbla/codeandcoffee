@@ -17,32 +17,34 @@ const item = {
 
 export function HowItWorks() {
   return (
-    <section className="bg-black text-white py-28 md:py-40">
+    <section className="bg-black text-white py-20 md:py-40">
       <motion.div {...stagger} className="wrap text-center max-w-[1100px] mx-auto">
-        <motion.p variants={item} className="text-white/60 text-[22px] md:text-[26px]">
+        <motion.p variants={item} className="text-white/60 text-[18px] md:text-[26px]">
           how does it work?
         </motion.p>
         <motion.h2
           variants={item}
-          className="text-white mt-10 tracking-[-0.02em] font-semibold leading-[1.02] text-[48px] md:text-[88px]"
+          className="text-white mt-6 md:mt-10 tracking-[-0.02em] font-semibold leading-[1.04] text-[clamp(40px,10vw,88px)]"
           style={{ fontFamily: "var(--font-inter), Inter, system-ui, sans-serif" }}
         >
           we meet, we build,
-          <br />
+          <br className="hidden md:inline" />
+          <span className="md:hidden"> </span>
           we learn.
         </motion.h2>
         <motion.p
           variants={item}
-          className="text-white font-semibold mt-8 text-[26px] md:text-[40px] leading-[1.2] tracking-[-0.02em]"
+          className="text-white font-semibold mt-6 md:mt-8 text-[clamp(22px,5.5vw,40px)] leading-[1.25] tracking-[-0.02em]"
           style={{ fontFamily: "var(--font-inter), Inter, system-ui, sans-serif" }}
         >
           coding sessions, workshops,
-          <br />
+          <br className="hidden md:inline" />
+          <span className="md:hidden"> </span>
           discussions, and shared experiences.
         </motion.p>
         <motion.div
           variants={item}
-          className="text-white/70 mt-16 text-[20px] md:text-[24px] leading-[1.5] max-w-[68ch] mx-auto space-y-4"
+          className="text-white/70 mt-10 md:mt-16 text-[18px] md:text-[24px] leading-[1.55] max-w-[68ch] mx-auto space-y-3 md:space-y-4"
         >
           <p>you show up with a laptop and a willingness to try.</p>
           <p>we code, share ideas, solve problems, learn together.</p>
@@ -52,7 +54,7 @@ export function HowItWorks() {
         </motion.div>
         <motion.p
           variants={item}
-          className="text-white/80 mt-14 text-[22px] md:text-[28px]"
+          className="text-white/80 mt-10 md:mt-14 text-[18px] md:text-[28px]"
         >
           not sure?{" "}
           <a

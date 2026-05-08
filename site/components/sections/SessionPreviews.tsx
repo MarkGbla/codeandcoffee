@@ -6,8 +6,8 @@ import { ease } from "@/lib/motion";
 export function SessionPreviews() {
   return (
     <section className="bg-white pt-2 pb-2 md:pt-4 md:pb-4">
-      <div className="max-w-[1440px] mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           <Frame delay={0} videoSrc="/video/session-preview-1.mp4" />
           <Frame delay={0.1} videoSrc="/video/session-preview-2.mp4" />
         </div>
@@ -23,11 +23,11 @@ function Frame({ delay, videoSrc }: { delay: number; videoSrc?: string }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "0px 0px -15% 0px" }}
       transition={{ duration: 0.7, ease, delay }}
-      className="relative aspect-[16/10] w-full overflow-hidden rounded-xl bg-neutral-900"
+      className="relative aspect-[4/3] sm:aspect-[16/10] w-full overflow-hidden rounded-xl bg-neutral-900"
     >
       {videoSrc && (
         <video
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none [transform:translateZ(0)] will-change-transform"
           src={videoSrc}
           autoPlay
           muted
@@ -36,6 +36,9 @@ function Frame({ delay, videoSrc }: { delay: number; videoSrc?: string }) {
           preload="metadata"
           aria-hidden
           tabIndex={-1}
+          disablePictureInPicture
+          disableRemotePlayback
+          controls={false}
         />
       )}
     </motion.div>

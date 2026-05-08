@@ -13,7 +13,13 @@ body {
   color: #0a0a0a;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  overflow-x: clip;
 }
+img, video { max-width: 100%; height: auto; }
+
+/* Framer Motion's whileInView observer needs a positioned ancestor to compute
+   scroll offsets correctly. Keep sections positioned by default. */
+section { position: relative; }
 
 /* Framer's container max-width (1312px) with responsive gutters. */
 .wrap {
@@ -23,7 +29,10 @@ body {
   padding-left: 64px;
   padding-right: 64px;
 }
-@media (max-width: 809.98px) {
+@media (max-width: 1023.98px) {
+  .wrap { padding-left: 32px; padding-right: 32px; }
+}
+@media (max-width: 639.98px) {
   .wrap { padding-left: 20px; padding-right: 20px; }
 }
 

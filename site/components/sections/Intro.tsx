@@ -12,8 +12,8 @@ const fadeUp = {
 
 export function Intro() {
   return (
-    <section className="bg-[#F2F3F3] py-28 md:py-40">
-      <div className="wrap grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-24 text-[22px] md:text-[26px] leading-[1.35] tracking-tight">
+    <section className="bg-[#F2F3F3] py-20 md:py-40">
+      <div className="wrap grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-24 text-[20px] md:text-[26px] leading-[1.4] tracking-tight">
         <motion.div {...fadeUp} className="space-y-8">
           <p>
             there are many ways to learn tech.

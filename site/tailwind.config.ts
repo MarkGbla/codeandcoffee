@@ -22,6 +22,7 @@ const config: Config = {
         sans: ["var(--font-sans)", "Manrope", "system-ui", "sans-serif"],
         display: ["var(--font-display)", "Bricolage Grotesque", "system-ui", "sans-serif"],
         scribble: ["var(--font-scribble)", "Gloria Hallelujah", "Comic Sans MS", "cursive"],
+        inter: ["var(--font-inter)", "Inter", "system-ui", "sans-serif"],
       },
       maxWidth: {
         wrap: "1312px",
@@ -35,10 +36,20 @@ const config: Config = {
           "0%": { transform: "translate3d(0, -50%, 0)" },
           "100%": { transform: "translate3d(0, 0, 0)" },
         },
+        "marquee-left": {
+          "0%": { transform: "translate3d(0, 0, 0)" },
+          "100%": { transform: "translate3d(-50%, 0, 0)" },
+        },
+        "marquee-right": {
+          "0%": { transform: "translate3d(-50%, 0, 0)" },
+          "100%": { transform: "translate3d(0, 0, 0)" },
+        },
       },
       animation: {
         "marquee-up": "marquee-up var(--marquee-duration, 40s) linear infinite",
         "marquee-down": "marquee-down var(--marquee-duration, 40s) linear infinite",
+        "marquee-left": "marquee-left var(--marquee-duration, 40s) linear infinite",
+        "marquee-right": "marquee-right var(--marquee-duration, 40s) linear infinite",
       },
     },
   },

@@ -11,7 +11,7 @@ import { Faqs } from "@/components/sections/Faqs";
 
 export default function Home() {
   return (
-    <main className="bg-white">
+    <main className="relative bg-white">
       <Nav />
       <Hero />
       <Intro />

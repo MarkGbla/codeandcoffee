@@ -16,24 +16,61 @@ const midCol: Photo[] = [
   { src: "/frnds/codeandcoffee003.png" },
 ];
 
+const mobileCards: { top: Photo[]; bottom: Photo[] }[] = [
+  {
+    top: [
+      { src: "/frnds/codeandcoffee001.png" },
+      { src: "/frnds/codeandcoffee003.png" },
+    ],
+    bottom: [
+      { src: "/frnds/codeandcoffee002.png" },
+      { src: "/frnds/codeandcoffee004.png" },
+    ],
+  },
+  {
+    top: [
+      { src: "/frnds/codeandcoffee004.png" },
+      { src: "/frnds/codeandcoffee002.png" },
+    ],
+    bottom: [
+      { src: "/frnds/codeandcoffee003.png" },
+      { src: "/frnds/codeandcoffee001.png" },
+    ],
+  },
+  {
+    top: [
+      { src: "/frnds/codeandcoffee002.png" },
+      { src: "/frnds/codeandcoffee001.png" },
+    ],
+    bottom: [
+      { src: "/frnds/codeandcoffee004.png" },
+      { src: "/frnds/codeandcoffee003.png" },
+    ],
+  },
+];
+
 export function BuildSomething() {
   return (
     <section className="bg-black text-white overflow-hidden">
-      <div className="max-w-[1440px] mx-auto px-6 md:px-16 py-24 md:py-36 grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,2.2fr)] gap-6 md:gap-8 items-start">
-        <MarqueeColumn photos={leftCol} direction="up" duration={34} />
-        <MarqueeColumn photos={midCol} direction="down" duration={46} />
+      <div className="max-w-[1440px] mx-auto px-5 sm:px-8 md:px-16 py-20 md:py-36 grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,2.2fr)] gap-10 md:gap-8 items-start">
+        <div className="hidden md:block">
+          <MarqueeColumn photos={leftCol} direction="up" duration={34} />
+        </div>
+        <div className="hidden md:block">
+          <MarqueeColumn photos={midCol} direction="down" duration={46} />
+        </div>
 
         <div
-          className="relative md:pt-28 md:pl-4"
+          className="relative order-first md:order-none md:pt-28 md:pl-4"
           style={{ fontFamily: "var(--font-inter), Inter, system-ui, sans-serif" }}
         >
-          <h2 className="text-white tracking-[-0.035em] font-semibold leading-[0.95] text-[44px] md:text-[80px]">
+          <h2 className="text-white tracking-[-0.035em] font-semibold leading-[0.95] text-[clamp(40px,10vw,80px)]">
             build something
             <br />
             that excites you.
           </h2>
 
-          <ul className="mt-10 md:mt-12 text-white/90 text-[20px] md:text-[24px] leading-[1.45] tracking-[-0.01em] list-none pl-0 space-y-[2px]">
+          <ul className="mt-8 md:mt-12 text-white/90 text-[18px] md:text-[24px] leading-[1.5] tracking-[-0.01em] list-none pl-0 space-y-1">
             <li>pick an idea you care about</li>
             <li>build a tool that solves a real problem.</li>
             <li>create a simple app from your idea.</li>
@@ -41,13 +78,18 @@ export function BuildSomething() {
             <li>explore something you&apos;ve always wanted to try.</li>
           </ul>
 
-          <p className="mt-10 md:mt-12 text-white/75 text-[20px] md:text-[24px] leading-[1.45] tracking-[-0.01em]">
+          <p className="mt-8 md:mt-12 text-white/75 text-[18px] md:text-[24px] leading-[1.5] tracking-[-0.01em]">
             the best way to learn is to build.
           </p>
 
-          <p className="mt-4 text-white text-[20px] md:text-[24px] leading-[1.45] tracking-[-0.01em] font-semibold">
+          <p className="mt-3 text-white text-[18px] md:text-[24px] leading-[1.5] tracking-[-0.01em] font-semibold">
             start small. stay consistent. grow from there.
           </p>
+        </div>
+
+        {/* Mobile: vertical snap-paging stack of photo cards, each card has two horizontal marquee rows */}
+        <div className="md:hidden -mx-5 sm:-mx-8 mt-8">
+          <MobileCardStack cards={mobileCards} />
         </div>
       </div>
     </section>
@@ -67,7 +109,7 @@ function MarqueeColumn({
 
   return (
     <div
-      className="group relative h-[110vh] min-h-[780px] overflow-hidden"
+      className="group relative h-[min(110vh,960px)] min-h-[680px] overflow-hidden"
       style={{
         WebkitMaskImage:
           "linear-gradient(to bottom, transparent 0, black 8%, black 92%, transparent 100%)",
@@ -115,5 +157,79 @@ function Tile({
         </figcaption>
       )}
     </figure>
+  );
+}
+
+function MobileCardStack({
+  cards,
+}: {
+  cards: { top: Photo[]; bottom: Photo[] }[];
+}) {
+  return (
+    <div
+      className="h-[70vh] overflow-y-auto snap-y snap-mandatory scroll-smooth [scrollbar-width:none] [-webkit-overflow-scrolling:touch] [&::-webkit-scrollbar]:hidden"
+    >
+      {cards.map((card, i) => (
+        <MobileCard key={i} top={card.top} bottom={card.bottom} />
+      ))}
+    </div>
+  );
+}
+
+function MobileCard({ top, bottom }: { top: Photo[]; bottom: Photo[] }) {
+  return (
+    <div className="snap-start snap-always h-[70vh] flex flex-col gap-3 py-3">
+      <MobileRow photos={top} direction="left" duration={28} />
+      <MobileRow photos={bottom} direction="right" duration={28} />
+    </div>
+  );
+}
+
+function MobileRow({
+  photos,
+  direction,
+  duration,
+}: {
+  photos: Photo[];
+  direction: "left" | "right";
+  duration: number;
+}) {
+  // Quadruple so the visible viewport is always covered, while preserving the
+  // 50% loop point that animate-marquee-left/right relies on.
+  const repeated = [...photos, ...photos, ...photos, ...photos];
+  return (
+    <div
+      className="relative flex-1 overflow-hidden"
+      style={{
+        WebkitMaskImage:
+          "linear-gradient(to right, transparent 0, black 5%, black 95%, transparent 100%)",
+        maskImage:
+          "linear-gradient(to right, transparent 0, black 5%, black 95%, transparent 100%)",
+      }}
+    >
+      <div
+        className={
+          "flex h-full gap-3 will-change-transform " +
+          (direction === "left" ? "animate-marquee-left" : "animate-marquee-right")
+        }
+        style={{ ["--marquee-duration" as string]: `${duration}s` }}
+      >
+        {repeated.map((p, i) => (
+          <div
+            key={i}
+            className="shrink-0 h-full aspect-[4/5] overflow-hidden rounded-xl bg-neutral-900"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={p.src}
+              alt=""
+              loading="lazy"
+              className="w-full h-full object-cover select-none"
+              draggable={false}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }

@@ -8,10 +8,10 @@ type Props = {
 };
 
 const sizes: Record<NonNullable<Props["size"]>, string> = {
-  sm: "text-[20px] md:text-[22px]",
-  md: "text-[28px]",
-  lg: "text-[44px] md:text-[56px]",
-  xl: "text-[72px] md:text-[120px] lg:text-[160px]",
+  sm: "text-[18px] md:text-[22px]",
+  md: "text-[22px] md:text-[28px]",
+  lg: "text-[36px] md:text-[56px]",
+  xl: "text-[48px] sm:text-[72px] md:text-[120px] lg:text-[160px]",
 };
 
 export function Logo({
